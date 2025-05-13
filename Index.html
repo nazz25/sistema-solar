@@ -1,0 +1,317 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi Sistema Solar</title>
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi Sistema Solar</title>
+  <style>
+    body {
+      background: black;
+      overflow: hidden;
+      margin: 0;
+    }
+    #sol {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+      margin-top: -50px;
+      background: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 30px orange;
+    }
+    #mercurio {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: grey;
+      border-radius: 50%;
+      box-shadow: 0 0 10px grey;
+      cursor: pointer;
+    }
+    #venus {
+      position:absolute;
+      width: 40px;
+      height: 40px;
+      background: yellow;
+      border-radius: 50%;
+      box-shadow: 0 0 10px yellow;
+      cursor: pointer;
+    }
+    #tierra {
+      position:absolute;
+      width: 40px;
+      height: 40px;
+      background: green;
+      border-radius: 50%;
+      box-shadow: 0 0 10px green;
+      cursor: pointer;
+    }
+    #marte {
+      position:absolute;
+      width: 40px;
+      height: 40px;
+      background: red;
+      border-radius: 50%;
+      box-shadow: 0 0 10px red ;
+      cursor: pointer;
+	} 
+	#jupiter {
+      position:absolute;
+      width: 50px;
+      height: 50px;
+      background: brown;
+      border-radius: 50%;
+      box-shadow: 0 0 10px brown;
+      cursor: pointer;
+	}
+	#saturno {
+      position:absolute;
+      width: 45px;
+      height: 45px;
+      background: purple;
+      border-radius: 50%;
+      box-shadow: 0 0 10px purple;
+      cursor: pointer;
+	}
+    #urano {
+      position:absolute;
+      width: 34px;
+      height: 34px;
+      background: blue;
+      border-radius: 50%;
+      box-shadow: 0 0 10px blue;
+      cursor: pointer;
+	}
+    #neptuno {
+      position:absolute;
+      width: 37px;
+      height: 37px;
+      background: blue;
+      border-radius: 50%;
+      box-shadow: 0 0 10px blue;
+      cursor: pointer;
+	}	
+	.orbita {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  border: 1px dotted rgba(255, 255, 255, 0.2);
+	  border-radius: 50%;
+	  pointer-events: none;
+	}
+	
+  </style>
+</head>
+<body>
+  <div id="sol"></div>
+  <div id="mercurio"   onclick="mostrarInfomercurio()"></div>
+  <div id="venus" onclick="mostrarInfovenus()"></div>
+  <div id="tierra" onclick="mostrarInfoTierra()"></div>
+  <div id="marte" onclick="mostrarInfomarte()"></div>
+  <div id="jupiter" onclick="mostrarInfojupiter()"></div>
+  <div id="saturno" onclick="mostrarInfosaturno()"></div>
+  <div id="urano" onclick="mostrarInfourano()"></div>
+  <div id="neptuno" onclick="mostrarInfoneptuno()"></div>  
+	  <!-- Órbitas -->
+	<div class="orbita" style="width: 140px; height: 140px; margin-left: -70px; margin-top: -70px;"></div>
+	<div class="orbita" style="width: 200px; height: 200px; margin-left: -100px; margin-top: -100px;"></div>
+	<div class="orbita" style="width: 260px; height: 260px; margin-left: -130px; margin-top: -130px;"></div>
+	<div class="orbita" style="width: 320px; height: 320px; margin-left: -160px; margin-top: -160px;"></div>
+	<div class="orbita" style="width: 380px; height: 380px; margin-left: -190px; margin-top: -190px;"></div>
+	<div class="orbita" style="width: 440px; height: 440px; margin-left: -220px; margin-top: -220px;"></div>
+	<div class="orbita" style="width: 500px; height: 500px; margin-left: -250px; margin-top: -250px;"></div>
+	<div class="orbita" style="width: 560px; height: 560px; margin-left: -280px; margin-top: -280px;"></div>
+  <script>
+   /*Fragmento del planeta mercurio*/
+   // mercurio
+   //variables 
+    let mercurio = document.getElementById('mercurio');
+    let angulomercurio = 0;
+    let radiomercurio = 70; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetamercurio() {
+      angulomercurio += 0.02;
+      let x = window.innerWidth / 2 + radiomercurio * Math.cos(angulomercurio) - 20;
+      let y = window.innerHeight / 2 + radiomercurio * Math.sin(angulomercurio) - 20;
+      mercurio.style.left = x + 'px';
+       mercurio.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetamercurio);
+    }
+
+    function mostrarInfomercurio() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetamercurio();
+	
+	/*Fragmento del planeta venus*/
+   // venus
+   //variables 
+    let venus = document.getElementById('venus');
+    let angulovenus = 10;
+    let radiovenus = 100; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetavenus() {
+      angulovenus += 0.02;
+      let x = window.innerWidth / 2 + radiovenus * Math.cos(angulovenus) - 20;
+      let y = window.innerHeight / 2 + radiovenus * Math.sin(angulovenus) - 20;
+      venus.style.left = x + 'px';
+       venus.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetavenus);
+    }
+
+    function mostrarInfovenus() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetavenus();
+   
+  	/*Fragmento del planeta tierra*/
+   // tierra
+   //variables 
+    let tierra = document.getElementById('tierra');
+    let angulotierra = 15;
+    let radiotierra = 130; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetatierra() {
+      angulotierra += 0.02;
+      let x = window.innerWidth / 2 + radiotierra * Math.cos(angulotierra) - 20;
+      let y = window.innerHeight / 2 + radiotierra * Math.sin(angulotierra) - 20;
+      tierra.style.left = x + 'px';
+       tierra.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetatierra);
+    }
+
+    function mostrarInfoTierra() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetatierra();
+	
+	 /*Fragmento del planeta marte*/
+   // marte
+   //variables 
+    let marte= document.getElementById('marte');
+    let angulomarte = 30;
+    let radiomarte = 160; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetamarte() {
+      angulomarte += 0.02;
+      let x = window.innerWidth / 2 + radiomarte * Math.cos(angulomarte) - 20;
+      let y = window.innerHeight / 2 + radiomarte * Math.sin(angulomarte) - 20;
+      marte.style.left = x + 'px';
+       marte.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetamarte);
+    }
+
+    function mostrarInfomarte() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+	 //mandamos a llamar la funcion
+    moverPlanetamarte();
+	
+	 /*Fragmento del planeta jupiter*/
+   // jupiter
+   //variables 
+    let jupiter = document.getElementById('jupiter');
+    let angulojupiter = 40;
+    let radiojupiter = 190; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetajupiter() {
+      angulojupiter += 0.02;
+      let x = window.innerWidth / 2 + radiojupiter * Math.cos(angulojupiter) - 20;
+      let y = window.innerHeight / 2 + radiojupiter * Math.sin(angulojupiter) - 20;
+      jupiter.style.left = x + 'px';
+       jupiter.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetajupiter);
+    }
+
+    function mostrarInfojupiter() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetajupiter();
+	
+	 /*Fragmento del planeta saturno*/
+   // saturno
+   //variables 
+    let saturno = document.getElementById('saturno');
+    let angulosaturno = 50;
+    let radiosaturno = 220; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetasaturno() {
+      angulosaturno += 0.02;
+      let x = window.innerWidth / 2 + radiosaturno * Math.cos(angulosaturno) - 20;
+      let y = window.innerHeight / 2 + radiosaturno * Math.sin(angulosaturno) - 20;
+      saturno.style.left = x + 'px';
+       saturno.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetasaturno);
+    }
+
+    function mostrarInfosaturno() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetasaturno();
+	
+	 /*Fragmento del planeta urano*/
+   // urano
+   //variables 
+    let urano = document.getElementById('urano');
+    let angulourano= 60;
+    let radiourano = 250; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetaurano() {
+      angulourano += 0.02;
+      let x = window.innerWidth / 2 + radiourano * Math.cos(angulourano) - 20;
+      let y = window.innerHeight / 2 + radiourano * Math.sin(angulourano) - 20;
+      urano .style.left = x + 'px';
+       urano.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetaurano);
+    }
+
+    function mostrarInfourano() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetaurano();
+	
+	 /*Fragmento del planeta neptuno*/
+   // neptuno
+   //variables 
+    let neptuno = document.getElementById('neptuno');
+    let anguloneptuno= 70;
+    let radioneptuno = 280; // distancia del planeta al Sol
+ //Funciones
+ //una función es un bloque de código diseñado para realizar una tarea específica/
+    function moverPlanetaneptuno() {
+      anguloneptuno += 0.02;
+      let x = window.innerWidth / 2 + radioneptuno * Math.cos(anguloneptuno) - 20;
+      let y = window.innerHeight / 2 + radioneptuno * Math.sin(anguloneptuno) - 20;
+      neptuno.style.left = x + 'px';
+       neptuno.style.top = y + 'px';
+      requestAnimationFrame(moverPlanetaneptuno);
+    }
+
+    function mostrarInfoneptuno() {
+      alert('¡Hola! Soy un planeta llamado Tierra. Gira alrededor del Sol.');
+    }
+ //mandamos a llamar la funcion
+    moverPlanetaneptuno();
+  </script>
+</body>
+</html> 	
